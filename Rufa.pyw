@@ -1,4 +1,4 @@
-#RuFa 1.11.00
+#RuFa 1.5-b
 #Библиотеки
 import telebot
 from telebot import types
@@ -139,7 +139,7 @@ def func(messange):
     #info
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
-            text="PROJECT RuFa 1.11.00 (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="PROJECT RuFa 1.5-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
     else:
         bot.send_message(messange.chat.id, 
             text="Такой команды нет")
