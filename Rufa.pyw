@@ -1,4 +1,4 @@
-#RuFa 1.5-b
+#RuFa 1.6-b
 #Библиотеки
 import telebot
 from telebot import types
@@ -42,7 +42,9 @@ def func(messange):
         btn3 = types.KeyboardButton("Infoℹ️")
         btn4 = types.KeyboardButton("Ping🔔")
         btn5 = types.KeyboardButton("Lock🔐")
-        markup.add(btn2, btn3, btn4, btn5)
+        btn16 = types.KeyboardButton("Hibernation💾")
+        btn17 = types.KeyboardButton("Reboot🔄")
+        markup.add(btn2, btn3, btn4, btn5, btn16, btn17)
         bot.send_message(messange.chat.id, 
             text="Привет👋", 
             reply_markup=markup)
@@ -123,8 +125,8 @@ def func(messange):
     #Функция Shutdown (Моментально выключает Windows машину)
     elif(messange.text == "🔴Shutdown🔴") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
-            text="🔴Shutdown🔴")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/shutdown.bat')
+            text="🔴Shutdowning...🔴")
+        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/Shutdowning.bat')
     
     #Функция Stop it (Останавливает запланированное выключение)
     elif(messange.text == "⛔️Stop it⛔️") and messange.from_user.first_name == username:
@@ -135,11 +137,23 @@ def func(messange):
         bot.send_message(messange.chat.id, 
             text="Menu")
         func()
+    
+    #Функция Гибернация (Моментально вводит машину в режим Гибернации)
+    elif(messange.text == "Hibernation💾") and messange.from_user.first_name == username:
+        bot.send_message(messange.chat.id, 
+            text="Hibernate...💾")
+        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/hibernation.bat')
+
+    #Функция Reboot(Моментально перезагружает машину)
+    elif(messange.text == "Reboot🔄") and messange.from_user.first_name == username:
+        bot.send_message(messange.chat.id, 
+            text="Rebooting...🔄")
+        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/reboot.bat')
         
     #info
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
-            text="PROJECT RuFa 1.5-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="RuFa 1.6-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
     else:
         bot.send_message(messange.chat.id, 
             text="Такой команды нет")
