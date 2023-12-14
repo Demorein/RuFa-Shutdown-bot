@@ -21,4 +21,4 @@ After these steps, you can close the folders
 ATTENTION
 I strongly recommend not spamming with the Shutdown and Lock commands because... this can lead to irreversible consequences.
 
-Enjoy!
+Enjoy
