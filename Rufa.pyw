@@ -1,4 +1,4 @@
-#RuFa 1.6-b
+#RuFa 1.7-b
 #Библиотеки
 import telebot
 from telebot import types
@@ -78,61 +78,61 @@ def func(messange):
     elif(messange.text == "Lock🔐") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Locked")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/lock.bat')
+        os.system('RunDll32.exe user32.dll,LockWorkStation')
     
     #Функция SD 5m (Выключает Windows машину через 5 минут)
     elif(messange.text == "🔴SD 5m⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 5 minutes⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD5m.bat')
+        os.system('shutdown.exe -s -t 300')
     
     #Функция SD 20m (Выключает Windows машину через 20 минут)
     elif(messange.text == "🔴SD 20m⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 20 minutes⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD20m.bat')
+        os.system('shutdown.exe -s -t 1200')
     
     #Функция SD 1h (Выключает Windows машину через 1 час)
     elif(messange.text == "🔴SD 1h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 1 hours⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD1h.bat')  
+        os.system('shutdown.exe -s -t 3600')  
     
     #Функция SD 2h (Выключает Windows машину через 2 часа)
     elif(messange.text == "🔴SD 2h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 2 hours⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD2h.bat')
+        os.system('shutdown.exe -s -t 7200')
     
     #Функция SD 3h (Выключает Windows машину через 3 часа)
     elif(messange.text == "🔴SD 3h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 3 hours⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD3h.bat')
+        os.system('shutdown.exe -s -t 10800')
     
     #Функция SD 4h (Выключает Windows машину через 4 часа)
     elif(messange.text == "🔴SD 4h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 4 hours⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD4h.bat')
+        os.system('shutdown.exe -s -t 14400')
     
     #Функция SD 5h (Выключает Windows машину через 5 часов)
     elif(messange.text == "🔴SD 5h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 5 hours⏳")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/sd_t/SD5h.bat')
+        os.system('shutdown.exe -s -t 18000')
     
     #Функция Shutdown (Моментально выключает Windows машину)
     elif(messange.text == "🔴Shutdown🔴") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="🔴Shutdowning...🔴")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/Shutdowning.bat')
+        os.system('shutdown.exe -s -t 5')
     
     #Функция Stop it (Останавливает запланированное выключение)
     elif(messange.text == "⛔️Stop it⛔️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown stoped⛔️")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/stopit.bat')
+        os.system('shutdown.exe -a')
     elif(messange.text == "Menu") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Menu")
@@ -142,18 +142,18 @@ def func(messange):
     elif(messange.text == "Hibernation💾") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Hibernate...💾")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/hibernation.bat')
+        os.system('shutdown.exe /h')
 
     #Функция Reboot(Моментально перезагружает машину)
     elif(messange.text == "Reboot🔄") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Rebooting...🔄")
-        os.system('C:/Users/Demorien/Desktop/Rufa/func/other/reboot.bat')
+        os.system('shutdown.exe -r -t 5')
         
     #info
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
-            text="RuFa 1.6-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="RuFa 1.7-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
     else:
         bot.send_message(messange.chat.id, 
             text="Такой команды нет")
