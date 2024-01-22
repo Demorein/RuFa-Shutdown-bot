@@ -10,10 +10,15 @@ n = ToastNotifier()
 #Файл с api_token
 file1 = open("token.txt", "r")
 token = file1.readline()
+print("Token = " + str(token))
 
 file2 = open("username.txt", "r")
 username = file2.readline()
-print(token)
+print("Username = " + str(username))
+
+file3 = open("userid.txt", "r")
+userid = file3.readline()
+print("Userid = " + str(userid))
 
 api_token = token
 bot = telebot.TeleBot(api_token)
@@ -34,6 +39,20 @@ def start(messange):
 @bot.message_handler(content_types=['text'])
 def func(messange):
     if(messange.text == "func🔙") and messange.from_user.first_name == username:
+        
+        #file4 = open("userid2.txt", "w")
+        #file4.write(str(messange.from_user.id))
+        #file4.close
+        
+        #file5 = open("userid2.txt", "r")
+        #userid2 = file5.readline()
+        
+        #if userid2 == str(messange.from_user.id):
+            #bot.send_message(messange.chat.id, 
+            #text="Correct")
+        #else:
+            #pass
+        
         bot.send_message(messange.chat.id, 
             text="func🔙")
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -44,7 +63,8 @@ def func(messange):
         btn5 = types.KeyboardButton("Lock🔐")
         btn16 = types.KeyboardButton("Hibernation💾")
         btn17 = types.KeyboardButton("Reboot🔄")
-        markup.add(btn2, btn3, btn4, btn5, btn16, btn17)
+        btn18 = types.KeyboardButton("Special🛠")
+        markup.add(btn2, btn3, btn4, btn5, btn16, btn17, btn18)
         bot.send_message(messange.chat.id, 
             text="Привет👋", 
             reply_markup=markup)
@@ -154,6 +174,9 @@ def func(messange):
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="RuFa 1.7-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+    elif(messange.text == "Special🛠") and messange.from_user.first_name == username:
+        bot.send_message(messange.chat.id, 
+            text="Your user id " + str(messange.from_user.id))
     else:
         bot.send_message(messange.chat.id, 
             text="Такой команды нет")
