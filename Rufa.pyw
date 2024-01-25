@@ -1,5 +1,6 @@
-#RuFa 1.7-b
+#RuFa 2501.09-b
 #Библиотеки
+import configparser
 import telebot
 from telebot import types
 from win10toast import ToastNotifier
@@ -7,19 +8,21 @@ import os
 
 n = ToastNotifier() 
 
-#Файл с api_token
-file1 = open("token.txt", "r")
-token = file1.readline()
-print("Token = " + str(token))
+data = configparser.ConfigParser()
+data.read("data.ini")
 
-file2 = open("username.txt", "r")
-username = file2.readline()
-print("Username = " + str(username))
 
-file3 = open("userid.txt", "r")
-userid = file3.readline()
-print("Userid = " + str(userid))
+#Переменные из data.ini
+token = data["Data"]["token"]
+print("Token " + str(token))
 
+username = data["Data"]["username"]
+print("Username " + str(username))
+
+userid = data["Data"]["userid"]
+print("Userid " + str(userid))
+
+#API Telegram
 api_token = token
 bot = telebot.TeleBot(api_token)
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -173,7 +176,7 @@ def func(messange):
     #info
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
-            text="RuFa 1.7-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="RuFa 2501.09-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
     elif(messange.text == "Special🛠") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Your user id " + str(messange.from_user.id))
