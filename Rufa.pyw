@@ -14,13 +14,29 @@ data.read("data.ini")
 
 #Переменные из data.ini
 token = data["Data"]["token"]
-print("Token " + str(token))
+if token:
+    print("Token = " + str(token))
+elif token == "token":
+    print("EDIT TOKEN")
+if not token:
+    print("No token")
+
+
 
 username = data["Data"]["username"]
-print("Username " + str(username))
+if username:
+    print("Username = " + str(username))
+if not username:
+    print("Error username")
+    
+    
 
 userid = data["Data"]["userid"]
-print("Userid " + str(userid))
+if userid:
+    print("Userid = " + str(userid))
+if not username:
+    print("Error userid")
+    
 
 #API Telegram
 api_token = token
@@ -69,6 +85,7 @@ def func(messange):
         btn16 = types.KeyboardButton("Hibernation💾")
         btn17 = types.KeyboardButton("Reboot🔄")
         btn18 = types.KeyboardButton("Special🛠")
+        btn19 = types.KeyboardButton("Off⭕️")
         markup.add(btn2, btn3, btn4, btn5, btn16, btn17, btn18)
         bot.send_message(messange.chat.id, 
             text="Привет👋", 
@@ -158,6 +175,7 @@ def func(messange):
         bot.send_message(messange.chat.id, 
             text="Shutdown stoped⛔️")
         os.system('shutdown.exe -a')
+        
     elif(messange.text == "Menu") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Menu")
@@ -179,9 +197,15 @@ def func(messange):
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="RuFa 1.9-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+        
+    #Функция Special (Выводит userid пользователя)
     elif(messange.text == "Special🛠") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Your user id " + str(messange.from_user.id))
+        
+    elif(messange.text == "Off⭕️") and messange.from_user.first_name == username:
+        exit()
+        
     else:
         bot.send_message(messange.chat.id, 
             text="Такой команды нет")
