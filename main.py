@@ -10,10 +10,10 @@ print(backmode)
 if not backmode:
     print("No data")
 if backmode:
-    if backmode == "true":
+    if backmode == "false":
         os.system("start pythonw rufa.pyw")
         exit()
-    elif backmode == "false":
+    elif backmode == "true":
         os.system("start python rufa.py")
         exit()
     else:
