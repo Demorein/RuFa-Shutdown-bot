@@ -1,3 +1,3 @@
 @echo off
-start pythonw Rufa.pyw
+start python Rufa.py
 
