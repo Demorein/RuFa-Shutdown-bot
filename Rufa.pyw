@@ -91,61 +91,61 @@ def func(messange):
             text="👇Выберите функцию👇", 
             reply_markup=markup)
     
-    #Функция Ping (Отправляет запрос на Windows машину)
+    #Функция Ping (Отправляет запрос на Windows cистему)
     elif(messange.text == "Ping🔔") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Act🔔")
         n.show_toast("Rufa", "You pinged", duration = 10, icon_path ="rufa.ico")
     
-    #Функция Lock (Блокирует Windows машину)
+    #Функция Lock (Блокирует Windows cистему)
     elif(messange.text == "Lock🔐") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Locked")
         os.system('RunDll32.exe user32.dll,LockWorkStation')
     
-    #Функция SD 5m (Выключает Windows машину через 5 минут)
+    #Функция SD 5m (Выключает Windows cистему через 5 минут)
     elif(messange.text == "🔴SD 5m⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 5 minutes⏳")
         os.system('shutdown.exe -s -t 300')
     
-    #Функция SD 20m (Выключает Windows машину через 20 минут)
+    #Функция SD 20m (Выключает Windows cистему через 20 минут)
     elif(messange.text == "🔴SD 20m⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 20 minutes⏳")
         os.system('shutdown.exe -s -t 1200')
     
-    #Функция SD 1h (Выключает Windows машину через 1 час)
+    #Функция SD 1h (Выключает Windows cистему через 1 час)
     elif(messange.text == "🔴SD 1h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 1 hours⏳")
         os.system('shutdown.exe -s -t 3600')  
     
-    #Функция SD 2h (Выключает Windows машину через 2 часа)
+    #Функция SD 2h (Выключает Windows cистему через 2 часа)
     elif(messange.text == "🔴SD 2h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 2 hours⏳")
         os.system('shutdown.exe -s -t 7200')
     
-    #Функция SD 3h (Выключает Windows машину через 3 часа)
+    #Функция SD 3h (Выключает Windows cистему через 3 часа)
     elif(messange.text == "🔴SD 3h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 3 hours⏳")
         os.system('shutdown.exe -s -t 10800')
     
-    #Функция SD 4h (Выключает Windows машину через 4 часа)
+    #Функция SD 4h (Выключает Windows cистему через 4 часа)
     elif(messange.text == "🔴SD 4h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 4 hours⏳")
         os.system('shutdown.exe -s -t 14400')
     
-    #Функция SD 5h (Выключает Windows машину через 5 часов)
+    #Функция SD 5h (Выключает Windows cистему через 5 часов)
     elif(messange.text == "🔴SD 5h⏳") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Shutdown after 5 hours⏳")
         os.system('shutdown.exe -s -t 18000')
     
-    #Функция Shutdown (Моментально выключает Windows машину)
+    #Функция Shutdown (Моментально выключает Windows cистему)
     elif(messange.text == "🔴Shutdown🔴") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="🔴Shutdowning...🔴")
@@ -161,13 +161,13 @@ def func(messange):
             text="Menu")
         func()
     
-    #Функция Гибернация (Моментально вводит машину в режим Гибернации)
+    #Функция Гибернация (Моментально вводит cистему в режим Гибернации)
     elif(messange.text == "Hibernation💾") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Hibernate...💾")
         os.system('shutdown.exe /h')
 
-    #Функция Reboot(Моментально перезагружает машину)
+    #Функция Reboot(Моментально перезагружает cистему)
     elif(messange.text == "Reboot🔄") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Rebooting...🔄")
