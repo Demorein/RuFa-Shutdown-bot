@@ -1,4 +1,4 @@
-#RuFa 2501.09-b
+#RuFa 25.09-b
 #Библиотеки
 import configparser
 import telebot
@@ -178,7 +178,7 @@ def func(messange):
     #info
     elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
-            text="RuFa 2501.09-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="RuFa 25.09-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
     elif(messange.text == "Special🛠") and messange.from_user.first_name == username:
         bot.send_message(messange.chat.id, 
             text="Your user id " + str(messange.from_user.id))
