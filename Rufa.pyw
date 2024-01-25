@@ -43,6 +43,7 @@ def start(messange):
 def func(messange):
     if(messange.text == "func🔙") and messange.from_user.first_name == username:
         
+        #
         #file4 = open("userid2.txt", "w")
         #file4.write(str(messange.from_user.id))
         #file4.close
@@ -55,6 +56,7 @@ def func(messange):
             #text="Correct")
         #else:
             #pass
+        #
         
         bot.send_message(messange.chat.id, 
             text="func🔙")
