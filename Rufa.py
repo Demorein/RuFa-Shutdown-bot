@@ -21,21 +21,21 @@ elif token == "token":
 if not token:
     print("No token")
 
-
-
 username = data["Data"]["username"]
 if username:
     print("Username = " + str(username))
 if not username:
     print("Error username")
-    
-    
 
 userid = data["Data"]["userid"]
 if userid:
     print("Userid = " + str(userid))
 if not username:
     print("Error userid")
+    
+
+backmode = data["Settings"]["Debug_mode"]
+print("Debug Mode = " + str(backmode))
     
 
 #API Telegram
