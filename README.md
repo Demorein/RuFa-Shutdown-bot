@@ -2,9 +2,13 @@ For the bot to work you need to install the latest version of Python from the of
 https://www.python.org/
 
 Next, open the console (cmd) and paste the following commands in order:
+
 pip install pyTelegramBotAPI
+
 pip install configparser
+
 pip install win10toast
+
 pip install os-win
 
 
