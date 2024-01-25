@@ -1,24 +1,12 @@
-#RuFa 1.7-b
+#RuFa 1.8-b
 #Библиотеки
+from settings.py import token, username, userid
 import telebot
 from telebot import types
 from win10toast import ToastNotifier
 import os
 
 n = ToastNotifier() 
-
-#Файл с api_token
-file1 = open("token.txt", "r")
-token = file1.readline()
-print("Token = " + str(token))
-
-file2 = open("username.txt", "r")
-username = file2.readline()
-print("Username = " + str(username))
-
-file3 = open("userid.txt", "r")
-userid = file3.readline()
-print("Userid = " + str(userid))
 
 api_token = token
 bot = telebot.TeleBot(api_token)
