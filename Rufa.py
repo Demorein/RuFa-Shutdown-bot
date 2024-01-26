@@ -1,4 +1,4 @@
-#RuFa 1.9-b
+#RuFa 1.11-b Security +
 #Библиотеки
 import configparser
 import telebot
@@ -14,29 +14,17 @@ data.read("data.ini")
 
 #Переменные из data.ini
 token = data["Data"]["token"]
-if token:
-    print("Token = " + str(token))
-elif token == "token":
-    print("EDIT TOKEN")
-if not token:
-    print("No token")
+print("Token = " + str(token))
 
 username = data["Data"]["username"]
-if username:
-    print("Username = " + str(username))
-if not username:
-    print("Error username")
+print("Username = " + str(username))
 
 userid = data["Data"]["userid"]
-if userid:
-    print("Userid = " + str(userid))
-if not username:
-    print("Error userid")
-    
+print("Userid = " + str(userid))
 
 backmode = data["Settings"]["Debug_mode"]
 print("Debug Mode = " + str(backmode))
-    
+
 
 #API Telegram
 api_token = token
@@ -57,23 +45,7 @@ def start(messange):
 #Команда func (Выводит список возможных функций func)
 @bot.message_handler(content_types=['text'])
 def func(messange):
-    if(messange.text == "func🔙") and messange.from_user.first_name == username:
-        
-        #
-        #file4 = open("userid2.txt", "w")
-        #file4.write(str(messange.from_user.id))
-        #file4.close
-        
-        #file5 = open("userid2.txt", "r")
-        #userid2 = file5.readline()
-        
-        #if userid2 == str(messange.from_user.id):
-            #bot.send_message(messange.chat.id, 
-            #text="Correct")
-        #else:
-            #pass
-        #
-        
+    if(messange.text == "func🔙") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="func🔙")
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -92,7 +64,7 @@ def func(messange):
             reply_markup=markup)
 
 #Команда Shutdown list (Выводит список возможных функций shutdown)
-    elif(messange.text == "Shutdown list📑") and messange.from_user.first_name == username:
+    elif(messange.text == "Shutdown list📑") and messange.from_user.id == int(userid):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         #Кнопки
         btn6 = types.KeyboardButton("🔴SD 5m⏳")
@@ -111,99 +83,99 @@ def func(messange):
             reply_markup=markup)
     
     #Функция Ping (Отправляет запрос на Windows cистему)
-    elif(messange.text == "Ping🔔") and messange.from_user.first_name == username:
+    elif(messange.text == "Ping🔔") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Act🔔")
         n.show_toast("Rufa", "You pinged", duration = 10, icon_path ="rufa.ico")
     
     #Функция Lock (Блокирует Windows cистему)
-    elif(messange.text == "Lock🔐") and messange.from_user.first_name == username:
+    elif(messange.text == "Lock🔐") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Locked")
         os.system('RunDll32.exe user32.dll,LockWorkStation')
     
     #Функция SD 5m (Выключает Windows cистему через 5 минут)
-    elif(messange.text == "🔴SD 5m⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 5m⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 5 minutes⏳")
         os.system('shutdown.exe -s -t 300')
     
     #Функция SD 20m (Выключает Windows cистему через 20 минут)
-    elif(messange.text == "🔴SD 20m⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 20m⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 20 minutes⏳")
         os.system('shutdown.exe -s -t 1200')
     
     #Функция SD 1h (Выключает Windows cистему через 1 час)
-    elif(messange.text == "🔴SD 1h⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 1h⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 1 hours⏳")
         os.system('shutdown.exe -s -t 3600')  
     
     #Функция SD 2h (Выключает Windows cистему через 2 часа)
-    elif(messange.text == "🔴SD 2h⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 2h⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 2 hours⏳")
         os.system('shutdown.exe -s -t 7200')
     
     #Функция SD 3h (Выключает Windows cистему через 3 часа)
-    elif(messange.text == "🔴SD 3h⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 3h⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 3 hours⏳")
         os.system('shutdown.exe -s -t 10800')
     
     #Функция SD 4h (Выключает Windows cистему через 4 часа)
-    elif(messange.text == "🔴SD 4h⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 4h⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 4 hours⏳")
         os.system('shutdown.exe -s -t 14400')
     
     #Функция SD 5h (Выключает Windows cистему через 5 часов)
-    elif(messange.text == "🔴SD 5h⏳") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴SD 5h⏳") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown after 5 hours⏳")
         os.system('shutdown.exe -s -t 18000')
     
     #Функция Shutdown (Моментально выключает Windows cистему)
-    elif(messange.text == "🔴Shutdown🔴") and messange.from_user.first_name == username:
+    elif(messange.text == "🔴Shutdown🔴") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="🔴Shutdowning...🔴")
         os.system('shutdown.exe -s -t 5')
     
     #Функция Stop it (Останавливает запланированное выключение)
-    elif(messange.text == "⛔️Stop it⛔️") and messange.from_user.first_name == username:
+    elif(messange.text == "⛔️Stop it⛔️") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Shutdown stoped⛔️")
         os.system('shutdown.exe -a')
         
-    elif(messange.text == "Menu") and messange.from_user.first_name == username:
+    elif(messange.text == "Menu") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Menu")
         func()
     
     #Функция Гибернация (Моментально вводит cистему в режим Гибернации)
-    elif(messange.text == "Hibernation💾") and messange.from_user.first_name == username:
+    elif(messange.text == "Hibernation💾") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Hibernate...💾")
         os.system('shutdown.exe /h')
 
     #Функция Reboot(Моментально перезагружает cистему)
-    elif(messange.text == "Reboot🔄") and messange.from_user.first_name == username:
+    elif(messange.text == "Reboot🔄") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Rebooting...🔄")
         os.system('shutdown.exe -r -t 5')
         
     #info
-    elif(messange.text == "Infoℹ️") and messange.from_user.first_name == username:
+    elif(messange.text == "Infoℹ️") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
-            text="RuFa 1.9-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="RuFa 1.11-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
         
     #Функция Special (Выводит userid пользователя)
-    elif(messange.text == "Special🛠") and messange.from_user.first_name == username:
+    elif(messange.text == "Special🛠") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
             text="Your user id " + str(messange.from_user.id))
         
-    elif(messange.text == "Off⭕️") and messange.from_user.first_name == username:
+    elif(messange.text == "Off⭕️") and messange.from_user.id == int(userid):
         exit()
         
     else:
