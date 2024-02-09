@@ -57,7 +57,7 @@ def func(messange):
         btn16 = types.KeyboardButton("Hibernation💾")
         btn17 = types.KeyboardButton("Reboot🔄")
         btn18 = types.KeyboardButton("Special🛠")
-        btn19 = types.KeyboardButton("Off⭕️")
+        #btn19 = types.KeyboardButton("Off⭕️")
         markup.add(btn2, btn3, btn4, btn5, btn16, btn17, btn18)
         bot.send_message(messange.chat.id, 
             text="Привет👋", 
@@ -175,8 +175,8 @@ def func(messange):
         bot.send_message(messange.chat.id, 
             text="Your user id " + str(messange.from_user.id))
         
-    elif(messange.text == "Off⭕️") and messange.from_user.id == int(userid):
-        exit()
+    #elif(messange.text == "Off⭕️") and messange.from_user.id == int(userid):
+        #exit()
         
     else:
         bot.send_message(messange.chat.id, 
