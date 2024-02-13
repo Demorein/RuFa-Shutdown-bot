@@ -1,4 +1,4 @@
-#RuFa 1.12-b Server +
+#RuFa 2.0-b Server +
 #Библиотеки
 from colorama import Fore, Back, Style
 import configparser
@@ -205,7 +205,7 @@ def func(messange):
     #info
     elif(messange.text == "Infoℹ️") and messange.from_user.id == int(userid):
         bot.send_message(messange.chat.id, 
-            text="RuFa 1.12-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
+            text="RuFa 2.0-b (OPEN SOURCE)\nCreator Demorien\nTelegramBot")
         
     #Функция Special (Выводит userid пользователя)
     elif(messange.text == "Special🛠") and messange.from_user.id == int(userid):
