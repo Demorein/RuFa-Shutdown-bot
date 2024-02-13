@@ -1,4 +1,5 @@
-RuFa Network Update - 
+RuFa - Network Update
+
 Designed for advanced users
 The bot is completely designed to work in co-op with the server
 
