@@ -51,7 +51,7 @@ markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 def _connect():
     try:
         #FIXME: Solve the problem that ip and port are not imported into the rufa.py file
-        client.connect(("LOCALHOST", YOURPORT))
+        client.connect((int(ip), int(port)))
         packet = client.recv(1024).decode("utf-8")
         print(Fore.LIGHTGREEN_EX + "\nGeted packet:" + str(packet))
         print("\nIP/PORT:\n" + str(client.getsockname()))
