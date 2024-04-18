@@ -4,7 +4,7 @@ import configparser
 data = configparser.ConfigParser()
 data.read("data.ini")
 
-backmode = "true"
+backmode = data["Settings"]["Debug_mode"]
 token = data["Data"]["token"]
 print(backmode)
 
