@@ -1,41 +1,21 @@
-import os
-import configparser
+import os, time, tkinter as tk, telebot, threading as th
+from tkinter import ttk
+from Core import basefunc
+from wins import *
 
-data = configparser.ConfigParser()
-data.read("data.ini")
+def main():
+    root = tk.Tk()
+    root.resizable(False, False)
+    root.geometry("400x200")
+    root.title("RuFA SB Monitor")
 
-backmode = data["Settings"]["Debug_mode"]
-token = data["Data"]["token"]
-print(backmode)
+    btnOpenConfig = ttk.Button(root, text="Open Config", command=WinConfig, width=13).place(x=310,y=10)
+    btnOpenSett = ttk.Button(root, text= "Open Settings", command=WinSett, width=13).place(x=310,y=40)
+    btnOpenAbout = ttk.Button(root, text= "About RuFA SB", command=WinAbout, width=13).place(x=310,y=170)
 
-if not backmode:
-    print("No data")
-if backmode:
-    if backmode == "false":
-        os.system("start pythonw rufa.pyw")
-        exit()
-    elif backmode == "true":
-        os.system("start python rufa.py")
-        exit()
-    else:
-         print("Only bool values!")
-        
-token = data["Data"]["token"]
-if token:
-    print("Token = " + str(token))
-elif token == "token":
-    print("EDIT TOKEN")
-if not token:
-    print("No token")
+    root.mainloop()
 
-username = data["Data"]["username"]
-if username:
-    print("Username = " + str(username))
-if not username:
-    print("Error username")
+if __name__ == "__main__":
+    main()
 
-userid = data["Data"]["userid"]
-if userid:
-    print("Userid = " + str(userid))
-if not username:
-    print("Error userid")
+
