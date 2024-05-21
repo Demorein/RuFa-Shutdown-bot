@@ -1,4 +1,4 @@
-import os, time, tkinter as tk, telebot, threading as th
+import os, time, tkinter as tk, telebot , threading as th
 from tkinter import ttk
 from Core import basefunc
 from wins import *
