@@ -1,5 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
+from Core import basefunc, debug
+
+# config['DEFAULT']['ForwardX11'] = 'yes'
+# with open('example.ini', 'w') as configfile:
+# config.write(configfile)
 
 def WinConfig():
     subConfig = tk.Toplevel()
@@ -8,6 +13,11 @@ def WinConfig():
     subConfig.resizable(False, False)
 
     def Apply():
+        import error_codes
+        basefunc._confobj()
+        basefunc._confwrite(file = "config.ini", section = 'Config', key = "token", data = "123")
+        basefunc._confwrite(file = "config.ini", section = 'Config', key = "userid", data = "123")
+        debug.mess(error_codes.e42.split("$")[0],error_codes.e42.split("$")[1])
         subConfig.destroy()
 
     LabelToken = ttk.Label(subConfig, text="Bot Token").place(x=75,y=10)
@@ -30,7 +40,7 @@ def WinSett():
         subSett.destroy()
 
     checkboxDebugMode = ttk.Checkbutton(subSett,text="Debug Mode\n(For developers)").place(x=20, y= 10)
-    checkboxNormalModeAct = ttk.Checkbutton(subSett,text="Active ping?").place(x=20, y= 50)
+    checkboxPing = ttk.Checkbutton(subSett,text="Active ping?").place(x=20, y= 50)
     ApplyButton = ttk.Button(subSett,text='Apply',command=Apply).place(x=40, y= 90)
 
     subSett.mainloop()
@@ -41,10 +51,14 @@ def WinAbout():
     subAbout.title("About")
     subAbout.resizable(False, False)
 
+    def Ok():
+        subAbout.destroy()
+
     LabelName = ttk.Label(subAbout,text="RuFA Shutdown Bot").pack()
     LabelVersion = ttk.Label(subAbout,text="v2.0-b").pack()
     LabelCreator = ttk.Label(subAbout,text="Creator Demorien").pack()
     LabelType = ttk.Label(subAbout,text="OPEN SOURCE").pack()
+    btnOk = ttk.Button(subAbout, text="Ок",command=Ok).pack()
 
     subAbout.mainloop()
     
