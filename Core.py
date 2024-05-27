@@ -36,6 +36,11 @@ class debug():
     def mess(mess,code):
         from easygui import msgbox
         msgbox(mess, code)
+
+class tg_bot():
+    def idd(messange, userid):
+        if messange.from_user.id == int(userid): return(True)
+        else: return(False)
         
         
 
