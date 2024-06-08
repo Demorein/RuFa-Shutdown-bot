@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 from Core import basefunc, debug
+from main import _start
+import threading
 
 def WinConfig():
     subConfig = tk.Toplevel()
@@ -46,15 +48,18 @@ def WinSett():
     def Apply():
         basefunc._confwrite(file = "config.ini", section = 'Settings', key = "debug", data = str(Debugm.get()))
         basefunc._confwrite(file = "config.ini", section = 'Settings', key = "ping", data = str(Pingm.get()))
+        basefunc._confwrite(file = "config.ini", section = 'Settings', key = 'autostart', data = str(AutoStart.get()))
         update()
         subSett.destroy()
 
     Debugm = tk.IntVar()
     Pingm = tk.IntVar()
+    AutoStart = tk.IntVar()
 
+    checkboxAutoStart = ttk.Checkbutton(subSett, text="Auto Start",variable=AutoStart).place(x=20, y=80)
     checkboxDebugMode = ttk.Checkbutton(subSett,text="Debug Mode\n(For developers)",variable=Debugm).place(x=20, y= 10)
     checkboxPing = ttk.Checkbutton(subSett,text="Active ping?",variable=Pingm).place(x=20, y= 50)
-    ApplyButton = ttk.Button(subSett,text='Apply',command=Apply).place(x=40, y= 90)
+    ApplyButton = ttk.Button(subSett,text='Apply',command=Apply).place(x=40, y= 110)
 
     subSett.mainloop()
 
@@ -104,7 +109,12 @@ def update():
         labelping = ttk.Label(text="Active Ping = False",width=50).place(x=0, y=60)
 
 
+
+    #START BUTTON
+    def __start():
+        threading.Thread(target=_start).start()
+        
     if cfg["Config"]["token"] == "0" or cfg["Config"]["userid"] == "0":
         btnStart = ttk.Button(text="Start RuFA", width=13, state="disabled").place(x=310,y=70)
     else:
-        btnStart = ttk.Button(text="Start RuFA", width=13).place(x=310,y=70)
+        btnStart = ttk.Button(text="Start RuFA", width=13, command=__start).place(x=310,y=70)

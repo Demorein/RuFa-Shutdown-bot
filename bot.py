@@ -41,7 +41,7 @@ def botwork(token, userid, debug, ping):
 
     bot.infinity_polling()
 
-def main():
+def _main():
     data = configparser.ConfigParser()
     data.read("Config.ini")
 
@@ -52,5 +52,3 @@ def main():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
     botwork(token, userid, debug, ping)
-
-main()

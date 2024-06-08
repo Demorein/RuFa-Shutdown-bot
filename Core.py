@@ -32,6 +32,10 @@ class basefunc():
         with open(file, 'w') as configfile:
             config.write(configfile)
 
+    def confread(file:str, section:str, key:str) -> str:
+        config.read()
+        return(config[section][key])
+
 class debug():
     def mess(mess,code):
         from easygui import msgbox
