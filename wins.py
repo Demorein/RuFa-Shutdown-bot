@@ -48,7 +48,10 @@ def WinSett():
     def Apply():
         basefunc._confwrite(file = "config.ini", section = 'Settings', key = "debug", data = str(Debugm.get()))
         basefunc._confwrite(file = "config.ini", section = 'Settings', key = "ping", data = str(Pingm.get()))
-        basefunc._confwrite(file = "config.ini", section = 'Settings', key = 'autostart', data = str(AutoStart.get()))
+        
+        #DELETE
+        #basefunc._confwrite(file = "config.ini", section = 'Settings', key = 'autostart', data = str(AutoStart.get()))
+        
         update()
         subSett.destroy()
 
@@ -56,7 +59,9 @@ def WinSett():
     Pingm = tk.IntVar()
     AutoStart = tk.IntVar()
 
-    checkboxAutoStart = ttk.Checkbutton(subSett, text="Auto Start",variable=AutoStart).place(x=20, y=80)
+    #DETELE
+    #checkboxAutoStart = ttk.Checkbutton(subSett, text="Auto Start",variable=AutoStart).place(x=20, y=80)
+    
     checkboxDebugMode = ttk.Checkbutton(subSett,text="Debug Mode\n(For developers)",variable=Debugm).place(x=20, y= 10)
     checkboxPing = ttk.Checkbutton(subSett,text="Active ping?",variable=Pingm).place(x=20, y= 50)
     ApplyButton = ttk.Button(subSett,text='Apply',command=Apply).place(x=40, y= 110)
