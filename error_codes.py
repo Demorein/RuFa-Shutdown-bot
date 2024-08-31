@@ -1,2 +1,0 @@
-e41 = "ERROR 41\ne41 - The token or user id input field is not filled in or filled in incorrectly\n\nTo avoid critical errors, the variable token = 0 and userid = 0$e41"
-e0 = "ERROR 0\ne0 - Unknown error$e0"
