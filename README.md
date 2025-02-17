@@ -10,4 +10,4 @@ The bot **is easy** to install thanks to an intuitive graphical interface<sub>**
 
 The bot is being developed by Demorien<sup>**c:**</sup>
 
-aoao
+aoao <sup>no iot</sup>
