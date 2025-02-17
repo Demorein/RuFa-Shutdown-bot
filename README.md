@@ -9,3 +9,5 @@ The bot allows you to turn off your system directly through the Telegram messeng
 The bot **is easy** to install thanks to an intuitive graphical interface<sub>**GUI**</sub>
 
 The bot is being developed by Demorien<sup>**c:**</sup>
+
+no iot <sup>**c^:**</sup>
